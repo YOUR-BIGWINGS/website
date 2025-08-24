@@ -1,0 +1,6 @@
+body {
+    background-image: url(./img.jpg.jpg);
+    background-size: cover;      /* Make image cover the window */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;/* Prevent the image from repeating */
+}
