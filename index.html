@@ -7,15 +7,37 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="cursor-halo"></div>
     <h1 class="heading">Hi. I'm Brodie</h1>
     <h3 class="subheading">
       <em>i'm obsessed with a certain book series</em>
     </h3>
-    <img
-      src="https://www.animationmagazine.net/wordpress/wp-content/uploads/Wings-of-Fire_Scholastic_crop.jpg"
-      height="200px"
-      class="image"
-    />
     <p class="text">Wings of fire is a cool book series.</p>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const halo = document.getElementById('cursor-halo');
+        let mouseX = 0;
+        let mouseY = 0;
+        let haloX = 0;
+        let haloY = 0;
+
+        document.addEventListener('mousemove', function(e) {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        });
+
+        function updateHalo() {
+          haloX += (mouseX - haloX) * 0.1;
+          haloY += (mouseY - haloY) * 0.1;
+          
+          halo.style.left = haloX - 150 + 'px';
+          halo.style.top = haloY - 150 + 'px';
+          
+          requestAnimationFrame(updateHalo);
+        }
+        
+        updateHalo();
+      });
+    </script>
   </body>
 </html>
