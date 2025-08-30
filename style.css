@@ -97,7 +97,7 @@ body::after {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: gradientShift 3s ease infinite;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem; /* Increased from 1rem to 3rem for more spacing */
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
