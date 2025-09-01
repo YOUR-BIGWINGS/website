@@ -15,17 +15,20 @@
     <h3 class="subheading">
       <em>I'm known online as YOUR_BIGWINGS or YOUR_BIGWINGS_XD</em>
     </h3>
-    <p class="text">This is my personal website where I will put things like my digital portfolio, things I like, personal projects and personal links</p>
-    <a href="about me.html" class="about-link">about me (not coded yet)</a>
+    <p class="text">
+      This is my personal website where I will put things like my digital
+      portfolio, things I like, personal projects and personal links
+    </p>
+    <a href="about.html" class="about-link">about me (not coded yet)</a>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const halo = document.getElementById('cursor-halo');
+      document.addEventListener("DOMContentLoaded", function () {
+        const halo = document.getElementById("cursor-halo");
         let mouseX = 0;
         let mouseY = 0;
         let haloX = 0;
         let haloY = 0;
 
-        document.addEventListener('mousemove', function(e) {
+        document.addEventListener("mousemove", function (e) {
           mouseX = e.clientX;
           mouseY = e.clientY;
         });
@@ -33,13 +36,13 @@
         function updateHalo() {
           haloX += (mouseX - haloX) * 0.1;
           haloY += (mouseY - haloY) * 0.1;
-          
-          halo.style.left = haloX - 150 + 'px';
-          halo.style.top = haloY - 150 + 'px';
-          
+
+          halo.style.left = haloX - 150 + "px";
+          halo.style.top = haloY - 150 + "px";
+
           requestAnimationFrame(updateHalo);
         }
-        
+
         updateHalo();
       });
     </script>
