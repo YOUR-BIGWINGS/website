@@ -11,6 +11,20 @@
     <div class="blue-flash" id="flash1"></div>
     <div class="blue-flash" id="flash2"></div>
     <div class="blue-flash" id="flash3"></div>
+    <nav class="site-nav" aria-label="Primary">
+      <button
+        id="navToggle"
+        class="nav-toggle-button"
+        aria-expanded="false"
+        aria-label="Toggle menu"
+      >
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+      <ul class="nav-list" id="navList">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
     <h1 class="heading">Hi. I'm Brodie!</h1>
     <h3 class="subheading">
       <em>I'm known online as YOUR_BIGWINGS or YOUR_BIGWINGS_XD</em>
@@ -19,7 +33,6 @@
       This is my personal website where I will put things like my digital
       portfolio, things I like, personal projects and personal links
     </p>
-    <a href="about.html" class="about-link">about me (not coded yet)</a>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const halo = document.getElementById("cursor-halo");
@@ -45,6 +58,43 @@
 
         updateHalo();
       });
+    </script>
+    <script>
+      // Mobile nav toggle
+      (function () {
+        const btn = document.getElementById("navToggle");
+        const list = document.getElementById("navList");
+        const nav = document.querySelector(".site-nav");
+        if (!btn || !list || !nav) return;
+
+        function closeMenu() {
+          list.classList.remove("show");
+          nav.classList.remove("open");
+          btn.setAttribute("aria-expanded", "false");
+          document.body.classList.remove("menu-open");
+        }
+
+        function openMenu() {
+          list.classList.add("show");
+          nav.classList.add("open");
+          btn.setAttribute("aria-expanded", "true");
+          document.body.classList.add("menu-open");
+        }
+
+        btn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          if (list.classList.contains("show")) closeMenu();
+          else openMenu();
+        });
+
+        list.addEventListener("click", function (e) {
+          if (e.target.tagName === "A") closeMenu();
+        });
+
+        document.addEventListener("click", function (e) {
+          if (!list.contains(e.target) && !btn.contains(e.target)) closeMenu();
+        });
+      })();
     </script>
   </body>
 </html>
