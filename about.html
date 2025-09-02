@@ -3,11 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dragonz homepage</title>
+    <title>about me</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="cursor-halo"></div>
     <div class="blue-flash" id="flash1"></div>
     <div class="blue-flash" id="flash2"></div>
     <div class="blue-flash" id="flash3"></div>
@@ -25,40 +24,6 @@
         <li><a href="about.html">About</a></li>
       </ul>
     </nav>
-    <h1 class="heading">Hi. I'm Brodie!</h1>
-    <h3 class="subheading">
-      <em>I'm known online as YOUR_BIGWINGS or YOUR_BIGWINGS_XD</em>
-    </h3>
-    <p class="text">
-      This is my personal website where I will put things like my digital
-      portfolio, things I like, personal projects and personal links
-    </p>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const halo = document.getElementById("cursor-halo");
-        let mouseX = 0;
-        let mouseY = 0;
-        let haloX = 0;
-        let haloY = 0;
-
-        document.addEventListener("mousemove", function (e) {
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-        });
-
-        function updateHalo() {
-          haloX += (mouseX - haloX) * 0.1;
-          haloY += (mouseY - haloY) * 0.1;
-
-          halo.style.left = haloX - 150 + "px";
-          halo.style.top = haloY - 150 + "px";
-
-          requestAnimationFrame(updateHalo);
-        }
-
-        updateHalo();
-      });
-    </script>
     <script>
       // Mobile nav toggle
       (function () {
@@ -96,5 +61,7 @@
         });
       })();
     </script>
+    <h1 class="heading">About Me</h1>
+    <p class="text">it literally says there's nothing here.</p>
   </body>
 </html>
