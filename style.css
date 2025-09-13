@@ -481,3 +481,211 @@ body::after {
 .site-nav.open .hamburger::before { transform: translateY(9px) rotate(45deg); }
 .site-nav.open .hamburger::after { transform: translateY(-9px) rotate(-45deg); }
 .hamburger::before, .hamburger::after { transition: transform 220ms cubic-bezier(.2,.9,.3,1), opacity 180ms ease; }
+
+/* Links Section Styles */
+.links-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 800px;
+  margin: 3rem auto 0;
+  padding: 0 2rem;
+  animation: linksEntrance 2s ease-out 1.5s forwards;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+@keyframes linksEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(42, 42, 42, 0.8));
+  border: 1px solid rgba(78, 205, 196, 0.3);
+  border-radius: 15px;
+  text-decoration: none;
+  color: #f3f6fa;
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(.25,.9,.35,1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.link-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(78, 205, 196, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.link-card:hover::before {
+  left: 100%;
+}
+
+.link-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 16px 48px rgba(78, 205, 196, 0.4);
+  border-color: rgba(78, 205, 196, 0.6);
+  background: linear-gradient(135deg, rgba(42, 42, 42, 0.9), rgba(26, 26, 26, 0.8));
+}
+
+.link-icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.link-icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.link-card:hover .link-icon {
+  transform: scale(1.2) rotate(10deg);
+  color: #4ecdc4;
+}
+
+.link-card:hover .link-icon svg {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.link-text {
+  transition: color 0.3s ease;
+}
+
+.link-card:hover .link-text {
+  color: #4ecdc4;
+}
+
+/* Responsive for links */
+@media (max-width: 768px) {
+  .links-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+    margin-top: 2rem;
+  }
+
+  .link-card {
+    padding: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .link-icon {
+    font-size: 1.3rem;
+  }
+}
+
+/* Redirect Page Styles */
+.redirect-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin: 3rem auto 0;
+  padding: 0 2rem;
+  animation: redirectEntrance 2s ease-out 1s forwards;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+@keyframes redirectEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reddit-icon {
+  font-size: 4rem;
+  color: #f3f6fa;
+  margin-bottom: 2rem;
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+    color: #f3f6fa;
+  }
+  50% {
+    transform: scale(1.1);
+    color: #4ecdc4;
+  }
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(78, 205, 196, 0.3);
+  border-top: 4px solid #4ecdc4;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.redirect-text {
+  font-family: 'Orbitron', monospace;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #b8c5d6;
+  text-align: center;
+  line-height: 1.6;
+  margin-top: 1rem;
+  animation: textFadeIn 1.5s ease-out 1.5s forwards;
+  opacity: 0;
+}
+
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive for redirect page */
+@media (max-width: 768px) {
+  .redirect-content {
+    padding: 0 1rem;
+    margin-top: 2rem;
+  }
+
+  .reddit-icon {
+    font-size: 3rem;
+  }
+
+  .redirect-text {
+    font-size: 1rem;
+  }
+}
