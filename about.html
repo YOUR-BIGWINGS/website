@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>about me</title>
     <link rel="icon" type="image/png" href="salt white.png" />
     <link rel="stylesheet" href="style.css" />
@@ -24,79 +24,42 @@
       async
     ></script>
   </head>
-  <body class="about-page">
-    <div class="blue-flash" id="flash1"></div>
-    <div class="blue-flash" id="flash2"></div>
-    <div class="blue-flash" id="flash3"></div>
-    <nav class="site-nav" aria-label="Primary">
-      <button
-        id="navToggle"
-        class="nav-toggle-button"
-        aria-expanded="false"
-        aria-label="Toggle menu"
-      >
-        <span class="hamburger" aria-hidden="true"></span>
-      </button>
-      <ul class="nav-list" id="navList">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="links.html">Links</a></li>
-      </ul>
+  <body>
+    <nav class="bottom-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="links.html">Links</a>
     </nav>
-    <script>
-      // Mobile nav toggle
-      (function () {
-        const btn = document.getElementById("navToggle");
-        const list = document.getElementById("navList");
-        const nav = document.querySelector(".site-nav");
-        if (!btn || !list || !nav) return;
 
-        function closeMenu() {
-          list.classList.remove("show");
-          nav.classList.remove("open");
-          btn.setAttribute("aria-expanded", "false");
-          document.body.classList.remove("menu-open");
-        }
+    <main>
+      <section
+        class="container glass-panel"
+        aria-labelledby="about-title"
+        style="text-align: center; padding-top: 40px"
+      >
+        <h1 id="about-title" class="heading">About Me</h1>
+        <p class="text">
+          Hello there and welcome to my beautiful website! My name is Brodie and
+          I'm a casual web developer looking at computer sciences due to my
+          interest in hardware, motorbikes and mechanics.
+        </p>
+        <p class="text">
+          We also cannot forget the holy grail, Wings Of Fire. I enjoy listening
+          to music, mostly Gorillaz and drum and bass.
+        </p>
+        <p class="text">
+          I also play a range of videogames including Far Cry 4, No Man's Sky
+          and Beat Saber.
+        </p>
+        <p class="text">
+          I enjoy anime such as Cyberpunk: Edgerunners and Black Clover. I look
+          forward to learning more into computers and engines.
+        </p>
+      </section>
+    </main>
 
-        function openMenu() {
-          list.classList.add("show");
-          nav.classList.add("open");
-          btn.setAttribute("aria-expanded", "true");
-          document.body.classList.add("menu-open");
-        }
+    <footer></footer>
 
-        btn.addEventListener("click", function (e) {
-          e.stopPropagation();
-          if (list.classList.contains("show")) closeMenu();
-          else openMenu();
-        });
-
-        list.addEventListener("click", function (e) {
-          if (e.target.tagName === "A") closeMenu();
-        });
-
-        document.addEventListener("click", function (e) {
-          if (!list.contains(e.target) && !btn.contains(e.target)) closeMenu();
-        });
-      })();
-    </script>
-    <h1 class="heading">About Me</h1>
-    <p class="text">
-      Hello there and welcome to my beautiful website! My name is Brodie and I'm
-      a casual web developer looking at computer sciences due to my interest in
-      hardware, motorbikes and mechanics.
-    </p>
-    <p class="text">
-      We also cannot forget the holy grail, Wings Of Fire. I enjoy listening to
-      music, mostly Gorillaz and drum and bass.
-    </p>
-    <p class="text">
-      I also play a range of videogames including Far Cry 4, No Man's Sky and
-      Beat Saber.
-    </p>
-    <p class="text">
-      I enjoy anime such as Cyberpunk: Edgerunners and Black Clover. I look
-      forward to learning more into computers and engines.
-    </p>
+    <script></script>
   </body>
 </html>

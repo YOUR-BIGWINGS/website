@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Redirecting to Reddit</title>
     <link rel="icon" type="image/png" href="../salt white.png" />
     <link rel="stylesheet" href="../style.css" />
@@ -25,119 +25,45 @@
     ></script>
   </head>
   <body>
-    <div id="cursor-halo"></div>
-    <div class="blue-flash" id="flash1"></div>
-    <div class="blue-flash" id="flash2"></div>
-    <div class="blue-flash" id="flash3"></div>
-    <nav class="site-nav" aria-label="Primary">
-      <button
-        id="navToggle"
-        class="nav-toggle-button"
-        aria-expanded="false"
-        aria-label="Toggle menu"
-      >
-        <span class="hamburger" aria-hidden="true"></span>
-      </button>
-      <ul class="nav-list" id="navList">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="../links.html">Links</a></li>
-      </ul>
+    <nav class="bottom-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../links.html">Links</a>
     </nav>
-    <h1 class="heading">Redirecting...</h1>
-    <h3 class="subheading">
-      <em>Taking you to Reddit</em>
-    </h3>
-    <div class="redirect-content">
-      <div class="reddit-icon">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="64"
-          height="64"
-          fill="currentColor"
-          class="bi bi-reddit"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M6.167 8a.83.83 0 0 0-.83.83c0 .459.372.84.83.831a.831.831 0 0 0 0-1.661m1.843 3.647c.315 0 1.403-.038 1.976-.611a.23.23 0 0 0 0-.306.213.213 0 0 0-.306 0c-.353.363-1.126.487-1.67.487-.545 0-1.308-.124-1.671-.487a.213.213 0 0 0-.306 0 .213.213 0 0 0 0 .306c.564.563 1.652.61 1.977.61zm.992-2.807c0 .458.373.83.831.83s.83-.381.83-.83a.831.831 0 0 0-1.66 0z"
-          />
-          <path
-            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.828-1.165c-.315 0-.602.124-.812.325-.801-.573-1.9-.945-3.121-.993l.534-2.501 1.738.372a.83.83 0 1 0 .83-.869.83.83 0 0 0-.744.468l-1.938-.41a.2.2 0 0 0-.153.028.2.2 0 0 0-.086.134l-.592 2.788c-1.24.038-2.358.41-3.17.992-.21-.2-.496-.324-.81-.324a1.163 1.163 0 0 0-.478 2.224q-.03.17-.029.353c0 1.795 2.091 3.256 4.669 3.256s4.668-1.451 4.668-3.256c0-.114-.01-.238-.029-.353.401-.181.688-.592.688-1.069 0-.65-.525-1.165-1.165-1.165"
-          />
-        </svg>
-      </div>
-      <div class="loading-spinner"></div>
-      <p class="redirect-text">
-        Please wait while we redirect you to Reddit...
-      </p>
-    </div>
+
+    <main>
+      <section
+        class="container redirect glass-panel"
+        aria-labelledby="redir-title"
+      >
+        <h1 id="redir-title" class="heading">Redirecting...</h1>
+        <h2 class="subheading"><em>Taking you to Reddit</em></h2>
+        <div class="big-icon" aria-hidden="true">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+          >
+            <path
+              d="M6.167 8a.83.83 0 0 0-.83.83c0 .459.372.84.83.831a.831.831 0 0 0 0-1.661m1.843 3.647c.315 0 1.403-.038 1.976-.611a.23.23 0 0 0 0-.306.213.213 0 0 0-.306 0c-.353.363-1.126.487-1.67.487-.545 0-1.308-.124-1.671-.487a.213.213 0 0 0-.306 0 .213.213 0 0 0 0 .306c.564.563 1.652.61 1.977.61zm.992-2.807c0 .458.373.83.831.83s.83-.381.83-.83a.831.831 0 0 0-1.66 0z"
+            />
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.828-1.165c-.315 0-.602.124-.812.325-.801-.573-1.9-.945-3.121-.993l.534-2.501 1.738.372a.83.83 0 1 0 .83-.869.83.83 0 0 0-.744.468l-1.938-.41a.2.2 0 0 0-.153.028.2.2 0 0 0-.086.134l-.592 2.788c-1.24.038-2.358.41-3.17.992-.21-.2-.496-.324-.81-.324a1.163 1.163 0 0 0-.478 2.224q-.03.17-.029.353c0 1.795 2.091 3.256 4.669 3.256s4.668-1.451 4.668-3.256c0-.114-.01-.238-.029-.353.401-.181.688-.592.688-1.069 0-.65-.525-1.165-1.165-1.165"
+            />
+          </svg>
+        </div>
+        <div class="spinner" role="status" aria-label="Loading"></div>
+        <p class="text">Please wait while we redirect you to Reddit...</p>
+      </section>
+    </main>
+
+    <footer></footer>
+
+    <script></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const halo = document.getElementById("cursor-halo");
-        let mouseX = 0;
-        let mouseY = 0;
-        let haloX = 0;
-        let haloY = 0;
-
-        document.addEventListener("mousemove", function (e) {
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-        });
-
-        function updateHalo() {
-          haloX += (mouseX - haloX) * 0.1;
-          haloY += (mouseY - haloY) * 0.1;
-
-          halo.style.left = haloX - 150 + "px";
-          halo.style.top = haloY - 150 + "px";
-
-          requestAnimationFrame(updateHalo);
-        }
-
-        updateHalo();
-      });
-    </script>
-    <script>
-      // Mobile nav toggle
-      (function () {
-        const btn = document.getElementById("navToggle");
-        const list = document.getElementById("navList");
-        const nav = document.querySelector(".site-nav");
-        if (!btn || !list || !nav) return;
-
-        function closeMenu() {
-          list.classList.remove("show");
-          nav.classList.remove("open");
-          btn.setAttribute("aria-expanded", "false");
-          document.body.classList.remove("menu-open");
-        }
-
-        function openMenu() {
-          list.classList.add("show");
-          nav.classList.add("open");
-          btn.setAttribute("aria-expanded", "true");
-          document.body.classList.add("menu-open");
-        }
-
-        btn.addEventListener("click", function (e) {
-          e.stopPropagation();
-          if (list.classList.contains("show")) closeMenu();
-          else openMenu();
-        });
-
-        list.addEventListener("click", function (e) {
-          if (e.target.tagName === "A") closeMenu();
-        });
-
-        document.addEventListener("click", function (e) {
-          if (!list.contains(e.target) && !btn.contains(e.target)) closeMenu();
-        });
-      })();
-    </script>
-    <script>
-      // Redirect after 4 seconds
+      // Redirect after ~3.5 seconds
       setTimeout(function () {
-        window.location.href = "https://www.reddit.com/user/YOUR_BIGWINGS"; // Replace YOUR_USERNAME with your actual Reddit username
+        window.location.href = "https://www.reddit.com/user/YOUR_BIGWINGS";
       }, 3500);
     </script>
   </body>

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>dragonz homepage</title>
     <link rel="icon" type="image/png" href="salt white.png" />
     <link rel="stylesheet" href="style.css" />
@@ -25,95 +25,29 @@
     ></script>
   </head>
   <body>
-    <div id="cursor-halo"></div>
-    <div class="blue-flash" id="flash1"></div>
-    <div class="blue-flash" id="flash2"></div>
-    <div class="blue-flash" id="flash3"></div>
-    <nav class="site-nav" aria-label="Primary">
-      <button
-        id="navToggle"
-        class="nav-toggle-button"
-        aria-expanded="false"
-        aria-label="Toggle menu"
-      >
-        <span class="hamburger" aria-hidden="true"></span>
-      </button>
-      <ul class="nav-list" id="navList">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="links.html">Links</a></li>
-      </ul>
+    <nav class="bottom-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="links.html">Links</a>
     </nav>
-    <h1 class="heading">Hi. I'm Brodie!</h1>
-    <h3 class="subheading">
-      <em>I'm known online as YOUR_BIGWINGS or YOUR_BIGWINGS_XD</em>
-    </h3>
-    <p class="text">
-      This is my personal website where I will put things like my digital
-      portfolio, things I like, personal projects and personal links
-    </p>
+
+    <main>
+      <section class="hero container glass-panel" aria-labelledby="title">
+        <h1 id="title" class="heading">Hi. I'm Brodie!</h1>
+        <h2 class="subheading">
+          <em>I'm known online as YOUR_BIGWINGS or YOUR_BIGWINGS_XD</em>
+        </h2>
+        <p class="text">
+          This is my personal website where I will put things like my digital
+          portfolio, things I like, personal projects and personal links
+        </p>
+      </section>
+    </main>
+
+    <footer></footer>
+
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const halo = document.getElementById("cursor-halo");
-        let mouseX = 0;
-        let mouseY = 0;
-        let haloX = 0;
-        let haloY = 0;
-
-        document.addEventListener("mousemove", function (e) {
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-        });
-
-        function updateHalo() {
-          haloX += (mouseX - haloX) * 0.1;
-          haloY += (mouseY - haloY) * 0.1;
-
-          halo.style.left = haloX - 150 + "px";
-          halo.style.top = haloY - 150 + "px";
-
-          requestAnimationFrame(updateHalo);
-        }
-
-        updateHalo();
-      });
-    </script>
-    <script>
-      // Mobile nav toggle
-      (function () {
-        const btn = document.getElementById("navToggle");
-        const list = document.getElementById("navList");
-        const nav = document.querySelector(".site-nav");
-        if (!btn || !list || !nav) return;
-
-        function closeMenu() {
-          list.classList.remove("show");
-          nav.classList.remove("open");
-          btn.setAttribute("aria-expanded", "false");
-          document.body.classList.remove("menu-open");
-        }
-
-        function openMenu() {
-          list.classList.add("show");
-          nav.classList.add("open");
-          btn.setAttribute("aria-expanded", "true");
-          document.body.classList.add("menu-open");
-        }
-
-        btn.addEventListener("click", function (e) {
-          e.stopPropagation();
-          if (list.classList.contains("show")) closeMenu();
-          else openMenu();
-        });
-
-        list.addEventListener("click", function (e) {
-          if (e.target.tagName === "A") closeMenu();
-        });
-
-        document.addEventListener("click", function (e) {
-          if (!list.contains(e.target) && !btn.contains(e.target)) closeMenu();
-        });
-      })();
+      // No scripts needed for bottom navigation
     </script>
   </body>
 </html>
