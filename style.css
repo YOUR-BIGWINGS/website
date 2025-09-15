@@ -39,7 +39,7 @@ body::before {
   background: radial-gradient(closest-side, rgba(124, 92, 255, 0.18), transparent 70%);
   filter: blur(40px) saturate(120%);
   pointer-events: none;
-  z-index: -1;
+  z-index: -2;
 }
 
 body::after {
@@ -51,7 +51,30 @@ body::after {
   background: radial-gradient(closest-side, rgba(110, 231, 255, 0.2), transparent 70%);
   filter: blur(40px) saturate(120%);
   pointer-events: none;
+  z-index: -2;
+}
+
+/* Animated background blobs */
+.bg-blobs {
+  position: fixed;
+  inset: -6% -6% -6% -6%;
+  pointer-events: none;
   z-index: -1;
+  contain: layout style paint;
+}
+.blob {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--size, 22vmax);
+  height: var(--size, 22vmax);
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--color, rgba(124,92,255,.55)), rgba(0,0,0,0) 60%);
+  opacity: .18;
+  filter: blur(64px) saturate(140%);
+  will-change: transform;
+  transform: translate(0, 0);
+  transition: transform 24s linear;
 }
 
 /* Bottom glass nav */
@@ -166,4 +189,5 @@ footer { height: 72px; }
 /* Accessibility: reduce heavy motion */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none!important; transition: none!important; }
+  .bg-blobs { display: none !important; }
 }
